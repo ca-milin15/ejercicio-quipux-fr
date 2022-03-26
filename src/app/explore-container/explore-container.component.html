@@ -6,9 +6,11 @@
   <hr>
   <ion-list >
     <ion-item-divider *ngFor="let listaRep of listaDelistasReproduccion">
-      <ion-label (click)="abrirDetalle(listaRep)">
+      <ion-label>
         Nombre: {{listaRep.nombre}} <br>
         Descripcion: {{listaRep.descripcion}}
+        <ion-fab-button size="small" (click)="abrirDetalle(listaRep)"><ion-icon name="eye"></ion-icon></ion-fab-button>
+        <ion-fab-button size="small" (click)="eliminar(listaRep.id)"><ion-icon name="trash"></ion-icon></ion-fab-button>
       </ion-label>
     </ion-item-divider>
   </ion-list>

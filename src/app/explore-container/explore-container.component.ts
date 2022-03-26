@@ -23,7 +23,7 @@ export class ExploreContainerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.consultarListasReproduccion()
+    this.consultarListasReproduccion();
   }
 
   consultarListasReproduccion(){
@@ -60,5 +60,16 @@ export class ExploreContainerComponent implements OnInit {
 
   crearListaReprod(){
 
+  }
+
+  eliminar(id){
+    this.transactionServiceService.ejecutarPeticion(this.LISTAS_REPROD_ENDPOINT.concat('/').concat(id), {}, 'DELETE')
+    .subscribe((listaReproduccion) => {
+      this.utilidadesService.presentAlert('Exito!', '', 'El registro se ha eliminado correctamente.');
+      this.utilidadesService.detenerSpinner();
+      this.consultarListasReproduccion();
+    }, (err) => {
+      this.utilidadesService.detenerSpinner();
+    });
   }
 }
