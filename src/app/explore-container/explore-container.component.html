@@ -1,4 +1,15 @@
 <div id="container">
-  <strong>{{ name }}</strong>
-  <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-fab-button (click)="crearListaReprod()"><ion-icon name="add-circle-outline"></ion-icon></ion-fab-button>
+  <br>
+  <ion-title size="large">Listas de reproduccion</ion-title>
+  <br>
+  <hr>
+  <ion-list >
+    <ion-item-divider *ngFor="let listaRep of listaDelistasReproduccion">
+      <ion-label (click)="abrirDetalle(listaRep)">
+        Nombre: {{listaRep.nombre}} <br>
+        Descripcion: {{listaRep.descripcion}}
+      </ion-label>
+    </ion-item-divider>
+  </ion-list>
 </div>
