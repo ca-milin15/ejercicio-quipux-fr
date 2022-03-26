@@ -1,0 +1,7 @@
+{
+  "name": "ejercicio-quipux-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
